@@ -23,7 +23,6 @@ const bubble = array => {
     let length = array.length;
     let c = 0;
     while(true){
-        console.log(array);
         for(let i = 0; i < length - c; i++){
             if(array[i] > array[i + 1]){
                 let tmp = array[i];
