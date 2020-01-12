@@ -1,8 +1,5 @@
 const randomArray = num => {
-    let array = [];
-    for(let i = 0; i < num; i++){
-        array.push(i);
-    }
+    let array = [...Array(num).keys()];
     for(let i = 0; i < num; i++){
         let rand = Math.floor(Math.random() * (num - i));
         let tmp = array[rand];
