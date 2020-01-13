@@ -18,17 +18,14 @@ const checker = array => {
 
 const bubble = array => {
     let length = array.length;
-    let c = 0;
-    while(true){
-        for(let i = 0; i < length - c; i++){
-            if(array[i] > array[i + 1]){
-                let tmp = array[i];
-                array[i] = array[i + 1];
-                array[i + 1] = tmp;
+    for(let i = 0; i < length; i++){
+        for(let j = 0; j < length - i; j++){
+            if(array[j] > array[j + 1]){
+                let tmp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = tmp;
             }
         }
-        if(checker(array)) break;
-        else continue;
     }
     return array;
 };
