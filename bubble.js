@@ -9,17 +9,10 @@ const randomArray = num => {
     return array;
 };
 
-const checker = array => {
-    for(let i = 0; i < array.length; i++){
-        if(array[i] > array[i + 1]) return false;
-    }
-    return true;
-};
-
 const bubble = array => {
     let length = array.length;
     for(let i = 0; i < length; i++){
-        for(let j = 0; j < length - i; j++){
+        for(let j = 0; j - 1 < length - i; j++){
             if(array[j] > array[j + 1]){
                 let tmp = array[j];
                 array[j] = array[j + 1];
@@ -30,4 +23,4 @@ const bubble = array => {
     return array;
 };
 
-console.log(bubble(randomArray(1000)));
+console.log(bubble(randomArray([1000])));

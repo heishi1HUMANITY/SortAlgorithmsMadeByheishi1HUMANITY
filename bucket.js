@@ -28,4 +28,4 @@ const bucket = array => {
     return array;
 };
 
-console.log(bucket(randomArray(10000)));
+console.log(bucket(randomArray(1000)));

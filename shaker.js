@@ -19,8 +19,7 @@ const checker = array => {
 const shaker = array => {
     let length = array.length;
     let c = 0;
-    while(true){
-        console.log(array);
+    while(c < length){
         if(c % 2 == 0){
             for(let i = 0 + c / 2; i < length - c / 2; i++){
                 if(array[i] > array[i + 1]){
@@ -38,10 +37,9 @@ const shaker = array => {
                 }
             }
         }
-        if(checker(array)) break;
-        else c++;
+        c++;
     }
     return array;
 };
 
-console.log(shaker(randomArray(100)));
+console.log(shaker(randomArray(1000)));
