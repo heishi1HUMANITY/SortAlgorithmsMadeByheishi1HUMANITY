@@ -9,17 +9,11 @@ const randomArray = num => {
     return array;
 };
 
-const checker = array => {
-    for(let i = 0; i < array.length; i++){
-        if(array[i] > array[i + 1]) return false;
-    }
-    return true;
-};
-
 const comb = array => {
     let length = array.length;
     let gap = Math.floor(length / 1.3);
-    while(true){
+    let changed = true;
+    while(changed){
         if(gap != 1){
             for(let i = 0; i + gap < length; i++){
                 if(array[i] > array[i + gap]){
@@ -31,14 +25,12 @@ const comb = array => {
             gap = Math.floor(gap / 1.3);
             if(gap === 9 || gap === 10) gap = 11;
         }else{
-            if(checker(array)) break;
-            else{
-                for(let i = 0; i + gap < length; i++){
-                    if(array[i] > array[i + gap]){
-                        let tmp = array[i];
-                        array[i] = array[i + gap];
-                        array[i + gap] = tmp;
-                    }
+            for(let i = 0; i + gap < length; i++){
+                if(array[i] > array[i + gap]){
+                    let tmp = array[i];
+                    array[i] = array[i + gap];
+                    array[i + gap] = tmp;
+                    changed = false;
                 }
             }
         }
