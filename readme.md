@@ -11,6 +11,8 @@
 ## Insertion sorts
 * Insertion sort
 * Shell sort
+## Merge sorts
+* Merge sort
 ## Distribution sorts
 * Bucket sort
 * Sleep sort?
