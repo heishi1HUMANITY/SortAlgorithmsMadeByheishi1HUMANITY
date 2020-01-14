@@ -10,6 +10,7 @@
 * Selection sort
 ## Insertion sorts
 * Insertion sort
+* Shell sort
 ## Distribution sorts
 * Bucket sort
 * Sleep sort?
