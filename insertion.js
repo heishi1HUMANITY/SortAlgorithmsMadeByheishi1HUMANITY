@@ -11,28 +11,16 @@ const randomArray = num => {
 
 const insertion = array => {
     const length = array.length;
-    c = 1;
-    while(c < length){
-        for(let i = c; i >= 0; i--){
-            if(i != 0){
-                if(array[c] <= array[i] && array[c] >= array[i - 1]){
-                    let tmp = array[c];
-                    for(let j = c; j >= i; j--){
-                        array[j] = array[j - 1];
-                    }
-                    array[i] = tmp;
-                }
+    for(let i = 1; i < length; i++){
+        let tmp = array[i];
+        for(let j = i - 1; j >= 0; j--){
+            if(tmp < array[j]){
+                array[j + 1] = array[j];
+                array[j] = tmp;
             }else{
-                if(array[c] <= array[i]){
-                    let tmp = array[c];
-                    for(let j = c; j >= i; j--){
-                        array[j] = array[j - 1];
-                    }
-                    array[i] = tmp;
-                }
+                break;
             }
         }
-        c++;
     }
     return array;
 };
