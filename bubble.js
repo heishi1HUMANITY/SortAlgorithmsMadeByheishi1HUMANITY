@@ -23,4 +23,4 @@ const bubble = array => {
     return array;
 };
 
-console.log(bubble(randomArray([1000])));
+console.log(bubble(randomArray(1000)));
