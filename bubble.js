@@ -9,14 +9,18 @@ const randomArray = num => {
     return array;
 };
 
+const swap = (array, a, b) => {
+    let tmp = array[a];
+    array[a] = array[b];
+    array[b] = tmp;
+};
+
 const bubble = array => {
     let length = array.length;
     for(let i = 0; i < length; i++){
         for(let j = 0; j - 1 < length - i; j++){
             if(array[j] > array[j + 1]){
-                let tmp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = tmp;
+                swap(array, j, j + 1);
             }
         }
     }

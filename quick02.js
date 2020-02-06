@@ -9,6 +9,12 @@ const randomArray = num => {
     return array;
 };
 
+const swap = (array, a, b) => {
+    let tmp = array[a];
+    array[a] = array[b];
+    array[b] = tmp;
+};
+
 const quick = array => {
     const length = array.length;
     let i = 0; j = length - 1, p = array[1], flag = true;
@@ -48,9 +54,7 @@ const quick = array => {
         left = quick(left);
     }else if(left.length == 2){
         if(left[0] > left[1]){
-            let tmp = left[0];
-            left[0] = left[1];
-            left[1] = tmp;
+            swap(left, 0, 1);
         }
     }
 
@@ -58,9 +62,7 @@ const quick = array => {
         right = quick(right);
     }else if(right.length == 2){
         if(right[0] > right[1]){
-            let tmp = right[0];
-            right[0] = right[1];
-            right[1] = tmp;
+            swap(right, 0, 1);
         }
     }
 

@@ -9,14 +9,18 @@ const randomArray = num => {
     return array;
 };
 
+const swap = (array, a, b) => {
+    let tmp = array[a];
+    array[a] = array[b];
+    array[b] = tmp;
+};
+
 const gnome = array => {
     let length = array.length;
     let i = 0;
     while(i < length){
         if(array[i] > array[i + 1]){
-            let tmp = array[i];
-            array[i] = array[i + 1];
-            array[i + 1] = tmp;
+            swap(array, i, i + 1);
             if(i != 0) i--;
         }else{
             i++;

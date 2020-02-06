@@ -16,14 +16,18 @@ const checker = array => {
     return true;
 };
 
+const swap = (array, a, b) => {
+    let tmp = array[a];
+    array[a] = array[b];
+    array[b] = tmp;
+};
+
 const bozo = array => {
     let length = array.length;
     while(true){
         if(checker(array)) break;
         let rand = [Math.floor(Math.random() * length), Math.floor(Math.random() * length)];
-        let tmp = array[rand[0]];
-        array[rand[0]] = array[rand[1]];
-        array[rand[1]] = tmp;
+        swap(array, rand[0], rand[1]);
     }
     return array;
 };

@@ -9,6 +9,12 @@ const randomArray = num => {
     return array;
 };
 
+const swap = (array, a, b) => {
+    let tmp = array[a];
+    array[a] = array[b];
+    array[b] = tmp;
+};
+
 const oddEven = array => {
     let length = array.length;
     let changed = true;
@@ -16,17 +22,13 @@ const oddEven = array => {
         changed = false;
         for(let i = 0; i < length - 1; i += 2){
             if(array[i] > array[i + 1]){
-                let tmp = array[i];
-                array[i] = array[i + 1];
-                array[i + 1] = tmp;
+                swap(array, i, i + 1);
                 changed = true;
             }
         }
         for(let i = 1; i < length - 1; i += 2){
             if(array[i] > array[i + 1]){
-                let tmp = array[i];
-                array[i] = array[i + 1];
-                array[i + 1] = tmp;
+                swap(array, i, i + 1);
                 changed = true;
             }
         }

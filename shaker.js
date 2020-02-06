@@ -9,6 +9,12 @@ const randomArray = num => {
     return array;
 };
 
+const swap = (array, a, b) => {
+    let tmp = array[a];
+    array[a] = array[b];
+    array[b] = tmp;
+};
+
 const shaker = array => {
     let length = array.length;
     let c = 0;
@@ -16,17 +22,13 @@ const shaker = array => {
         if(c % 2 == 0){
             for(let i = 0 + c / 2; i < length - c / 2; i++){
                 if(array[i] > array[i + 1]){
-                    let tmp = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = tmp;
+                    swap(array, i, i + 1);
                 }
             }
         }else{
             for(let i = length - Math.floor(c / 2) ; i >= 0 + Math.floor(c / 2); i--){
                 if(array[i] < array[i - 1]){
-                    let tmp = array[i];
-                    array[i] = array[i - 1];
-                    array[i - 1] = tmp;
+                    swap(array, i, i - 1);
                 }
             }
         }

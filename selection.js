@@ -9,6 +9,12 @@ const randomArray = num => {
     return array;
 };
 
+const swap = (array, a, b) => {
+    let tmp = array[a];
+    array[a] = array[b];
+    array[b] = tmp;
+};
+
 const selection = array => {
     const length = array.length;
     let c = 0;
@@ -17,9 +23,7 @@ const selection = array => {
         for(let i = 0 + c; i < length; i++){
             if(array[min] > array[i]) min = i;
         }
-        let tmp = array[c];
-        array[c] = array[min];
-        array[min] = tmp;
+        swap(array, c, min);
         c++;
     }
     return array;
