@@ -19,11 +19,7 @@ const quick = array => {
     const length = array.length, p = array[0];
     let left = [], right = [];
     for(let i = 1; i < length; i++){
-        if(array[i] < p){
-            left.push(array[i])
-        }else{
-            right.push(array[i]);
-        }
+        array[i] < p ? left.push(array[i]) : right.push(array[i]); 
     }
 
     if(left.length > 2){
